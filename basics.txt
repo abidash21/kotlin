@@ -15,5 +15,37 @@ ex: lateinit var name: String
     name = "Abinash"
 (val can not be used)
 
+#Datatype
+1. Numeric:
+   Byte - 8 bit
+   Short - 16 bit
+   Int - 32 bit
+   Long - 64 bit
+   Float - 32 bit floating point num(suffix f)
+   Double - 64 bit floating point num
+
+2. Character and String
+   Char
+   String
+
+3. Boolean:
+   TRUE/FALSE
+
+4.Array Data Type
+
+    val numbers = arrayOf(1,2,3,4);
+    println(numbers[0]);
+    println("First Number: ${numbers[2]}");
+    val Numbers : Array<Int> = arrayOf(5,6,7,8); //TypeSafe
+    println(Numbers[1]);
+    val mixedArray = arrayListOf("Hello", 10, true);
+    println(mixedArray.joinToString(
+     separator = " | ",
+    prefix = "[",
+    postfix = "]"
+    ));
 
 
+5.Nullable Datatype
+   =>variables by default can't hold null variables
+   =>var name: String? = null;
