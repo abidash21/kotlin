@@ -49,3 +49,28 @@ ex: lateinit var name: String
 5.Nullable Datatype
    =>variables by default can't hold null variables
    =>var name: String? = null;
+
+#Standad Input
+fun main() {
+    var name = readln()
+    println(name);
+}
+
+#Collections
+ store and manipulate groups of Data
+
+ There are two main types of Collections:
+ 1. Immutable(Read-only)
+ List<T> -> Ordered Collection (duplicates allowed)
+ Set<T> -> Unique elements (unordered)
+ Map<K,V> -> Key-Value pairs (unique keys)
+
+ 2. Mutable(Modified)
+MutableList<T> -> Ordered Collection (duplicates allowed)
+MutableSet<T> -> Unique elements (unordered)
+MutableMap<K,V> -> Key-Value pairs (unique keys)
+
+ex: val fruits = mutableListOf("Apple","Banana","Cherry","Orange")
+    val mp = mutableMapOf("shivam" to 108,"vijay" to 501,"Three" to 3)
+    println(mp)
+
