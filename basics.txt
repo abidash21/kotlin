@@ -1,0 +1,19 @@
+#Entry pointd: main function
+
+fun main(){
+    println("Abinash Dash");
+}
+
+#variables:
+1.val - Immutable
+2.var - Mutable
+
+
+#lateinit
+Initialize vairable later
+ex: lateinit var name: String
+    name = "Abinash"
+(val can not be used)
+
+
+
