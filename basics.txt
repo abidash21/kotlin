@@ -98,3 +98,141 @@ ex: val fruits = mutableListOf("Apple","Banana","Cherry","Orange")
 2.while (condition){
     //code execute until condition true
 }
+
+#Nullsafety 
+handle nullable data type
+4 pointers handle null pointer exception
+1. (?.) - safe call exception
+   Access properties or null methods safely
+   if variable is null, it returns null
+
+   var name: String? = null;
+   println(name?.length);
+
+2. (?:) - elvis operator
+   Provide a default value when value is null.
+
+ex: var name: String? = null
+    val finalName = name ?: "Unknown"
+    println(finalName) 
+
+    - When left side is null, the right side expression is returned
+
+3. (!!) - Not null assertion operator
+   forcefully converts a nullable type to a non-nullable type 
+   and throws a NullPointerException if the value is actually null
+
+   ex: var name: String? = null
+       val length = name!!.length   // ❌ Throws NullPointerException
+
+    - Avoid using !! unless you are 100% sure the value cannot be null.
+
+4. (as?) - safe cast operator
+   Safetly cast a variable to target type
+   if casting fails throws null
+
+   val obj: Any = "Abinash"
+   val name= obj as? Int  //prints null
+   val name= obj as? String  //prints Abinash
+   val name= obj as Int  //Throws class exception
+   val name= obj as String  // prints Abinash
+
+# use of let with safe call operator
+   let function is used to execute a block of code only if the variable is not null.
+   Used with nullable types to avoid null pointer exception
+   ex:
+   var name: String? = "Abinash"
+
+   name?.let {
+    println(name); // executes only if name is not null
+   }
+
+# Functions
+  
+1. Main function(entry point)
+   fun main(){
+
+   }
+
+2. User defined functions
+   fun greet(){
+    println("Good Morning");
+   }
+
+3. parameterized functions
+   fun green(name: String, age: Int){
+    println("Hello, $name,You are $age years old.");
+   }
+
+4. Unit returning functions - a function that doesn't return a value(similar to void)
+   fun run(): Unit {
+    println("I am running");
+   }
+
+5. Single expression function
+   fun square(n: Int): Int{
+      return n*n;
+   }  // normal function
+
+   fun square (n: Int) = n*n;
+
+6. Generic Function(can work with any type of data)
+   fun <T> printData(data: T){
+    println("Data: $data");
+   }
+
+7. Lambda Function
+   A function without a name, that can be assigned a variable
+
+   =>val lamdbaName: (inputType) -> ReturnType = { parameter ->() body} // {}-lamda expression
+
+   =>If the lambda has only one parameter, you can use the default name it
+    val square: (Int) -> Int = { it * it }
+   
+   =>val numbers = listOf(1, 2, 3, 4, 5)
+     val doubled = numbers.map { it * 2 }
+
+
+
+8. High Order Function
+   A function that takes another function as a parameter or returns one
+   ex:
+    fun greet(name: String, action: (String) -> String): String {
+      return action(name)
+    }
+
+    fun main(){
+      val message = greet("Abinash"){name -> "Hi, $name"};
+      println(message)
+    }
+
+9. Member Function - A function inside the class
+   
+   class Person(val name: String){
+    fun introduce(){
+        println("Hi, $name");
+    }
+   }
+   fun main(){
+      val p=Person("Abinash")
+      p.introduce();
+   }
+
+10. Overriding Function - used in inheritance
+    
+     
+    open class Animal{
+      open fun makeSound(){
+      }
+    }
+
+   class Dog: Animal(){
+    override fun makeSound(){
+        println("Dog Barks");
+     }
+   }
+   fun main(){
+     val myDog = Dog();
+     myDog.makeSound();
+    }
+
