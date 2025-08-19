@@ -220,7 +220,7 @@ ex: var name: String? = null
 
 10. Overriding Function - used in inheritance
     
-     
+    // By default classes are final - which means it can not be inherited
     open class Animal{
       open fun makeSound(){
       }
@@ -235,4 +235,54 @@ ex: var name: String? = null
      val myDog = Dog();
      myDog.makeSound();
     }
+
+#Interface
+=> an interface in kotlin is a blueprint of a class that defines what a class should do 
+   not how to do it(similar to abstract class)
+=> provides method declaration(can have implemetations)
+=> class can implement multiple interfaces
+=> multiple inheritance is not allowed
+
+interface Animal{
+    fun makeSound()
+}
+
+class Dog: Animal {
+    override fun makeSound(){
+        println("Barking").
+    }
+}
+
+fun main(){
+    val dog = Dog();
+    dog.makeSound();
+}
+ 
+=> If a function is implemented in the interface then it is default
+=> Handling conflicts in interface
+
+interface A{
+    fun show(){
+        println("interface A");
+    }
+}
+
+interface B{
+    fun show(){
+        println("interface A");
+    }
+}
+
+class C: A,B{
+    override fun show(){
+        super<A>.show();
+    }
+}
+
+fun main(){
+    var obj = C();
+    obj.show();
+}
+
+=>
 
