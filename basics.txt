@@ -74,3 +74,27 @@ ex: val fruits = mutableListOf("Apple","Banana","Cherry","Orange")
     val mp = mutableMapOf("shivam" to 108,"vijay" to 501,"Three" to 3)
     println(mp)
 
+
+#If as an expression
+    val max = if (a>b) a else b
+
+#When
+    val day=readln().toInt()
+    when(day){
+        1-> println("Monday");
+        2-> println("Tuesday");
+        3-> println("Wednesday");
+        4-> println("Thursday");
+        5-> println("Friday");
+        6,7 -> println("Weekend");
+        else -> println("Invalid day");
+    }
+
+#Loop
+1.for(variable in range/collection)
+  iterate over range,array,list and any iterable object
+   for (i in 1..5) println(i);
+
+2.while (condition){
+    //code execute until condition true
+}
