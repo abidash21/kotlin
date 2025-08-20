@@ -284,5 +284,28 @@ fun main(){
     obj.show();
 }
 
-=>
+#class
+=>blueprint for creating objects
+=>defines properties and methods
+#object
+=>Instance of a class,access class properties and properties
+
+#constructor
+=>special function used to Initialize a class when object is created
+
+1. Primary constructor
+=>A primary header is declared in the class header using the constructor
+
+2. Secondary constructor
+=>declared within the class body using constructor keyword
+
+3. Init Block(for extra initialization)
+=>The init block is executed as soon as the object is created, before any other
+  function run even before constructor.
+
+  class Car(brand: String, model: String){
+    init {
+        println("Car $brand and $model is created");
+    }
+  }
 
