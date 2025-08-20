@@ -90,6 +90,8 @@ ex: val fruits = mutableListOf("Apple","Banana","Cherry","Orange")
         else -> println("Invalid day");
     }
 
+    "->" separates condtion from the result
+
 #Loop
 1.for(variable in range/collection)
   iterate over range,array,list and any iterable object
@@ -308,4 +310,54 @@ fun main(){
         println("Car $brand and $model is created");
     }
   }
+
+
+#Types of class
+1. Data class
+   Used to store data and provides some useful methods like toString(),copy() etc.
+
+   data class User(val name: String, val age: Int)
+
+
+   fun main() {
+      val u1 = User("Abinash",23)
+      println(u1)
+      val u2=u1.copy(age=25);
+      println(u2)
+    }
+
+2. Enum class
+   To define a class of constant values
+
+3. Sealed class
+   similar to enum but with more flexibility,used for defining restricted hierarchies.
+
+
+sealed class Result
+
+class Success(val Data: String): Result();
+class Error(val message: String): Result();
+
+fun handle(result: Result){
+    when (result){
+        is Success -> println(result.Data)
+        is Error -> println(result.message)
+    }
+}
+
+fun main(){
+    var r1 = Success("Successfully logged")
+    handle(r1)
+}
+
+4. Abstract class
+=>Abstract class can not be instantiated and must be inherited
+=>Abstract keyword must be used before function declaring
+  and it must be override in child classes
+
+
+5. Singleton object
+=>Class that can have only one instance
+=>keyword object is used to create a Singleton
+=>can access it directly without creating instance
 
